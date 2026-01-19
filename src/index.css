@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+  Дизайн-система портала «Мой Двор»
+  Образовательный портал для жителей МКД
+  Стиль: современный, спокойный, государственный
+  All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Белый фон */
+    --background: 0 0% 100%;
+    /* Тёмно-серый текст */
+    --foreground: 220 20% 20%;
+
+    /* Карточки */
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 20%;
+
+    /* Поповеры */
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 20%;
+
+    /* Основной акцент — бирюзово-зелёный (teal) */
+    --primary: 174 62% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Вторичный фон — светло-серый */
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 220 20% 20%;
+
+    /* Приглушённые элементы */
+    --muted: 210 20% 96%;
+    --muted-foreground: 220 10% 50%;
+
+    /* Акцент (для ховеров) */
+    --accent: 174 50% 95%;
+    --accent-foreground: 174 62% 35%;
+
+    /* Деструктивные действия */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Границы и инпуты */
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 174 62% 40%;
+
+    --radius: 0.75rem;
+
+    /* Сайдбар */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 220 20% 30%;
+    --sidebar-primary: 174 62% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 174 50% 95%;
+    --sidebar-accent-foreground: 174 62% 35%;
+    --sidebar-border: 220 15% 90%;
+    --sidebar-ring: 174 62% 40%;
+  }
+
+  .dark {
+    --background: 220 25% 10%;
+    --foreground: 210 20% 95%;
+
+    --card: 220 25% 12%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 220 25% 12%;
+    --popover-foreground: 210 20% 95%;
+
+    --primary: 174 62% 45%;
+    --primary-foreground: 220 25% 10%;
+
+    --secondary: 220 20% 18%;
+    --secondary-foreground: 210 20% 95%;
+
+    --muted: 220 20% 18%;
+    --muted-foreground: 220 10% 60%;
+
+    --accent: 174 40% 20%;
+    --accent-foreground: 174 62% 60%;
+
+    --destructive: 0 62% 35%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 174 62% 45%;
+
+    --sidebar-background: 220 25% 10%;
+    --sidebar-foreground: 210 20% 90%;
+    --sidebar-primary: 174 62% 45%;
+    --sidebar-primary-foreground: 220 25% 10%;
+    --sidebar-accent: 174 40% 20%;
+    --sidebar-accent-foreground: 174 62% 60%;
+    --sidebar-border: 220 20% 20%;
+    --sidebar-ring: 174 62% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
