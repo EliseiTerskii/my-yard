@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Clock } from "lucide-react";
-import { LegalArticle, getCategoryLabel } from "@/data/legalArticles";
+import {Material} from "@/hooks/useMaterials.ts";
 
 interface ArticleCardProps {
-  article: LegalArticle;
+  article: Material;
 }
 
 const ArticleCard = ({ article }: ArticleCardProps) => {
@@ -15,11 +15,11 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
         <CardContent className="p-5">
           <div className="flex items-center gap-2 mb-3">
             <Badge variant="outline" className="text-xs font-normal">
-              {getCategoryLabel(article.category)}
+              {article.topic}
             </Badge>
             <div className="flex items-center gap-1 text-xs text-muted-foreground">
               <Clock className="w-3 h-3" />
-              <span>{article.readTime} мин</span>
+              <span>{article.readingDuration} мин</span>
             </div>
           </div>
           
@@ -28,7 +28,7 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
           </h3>
           
           <p className="text-sm text-muted-foreground line-clamp-2">
-            {article.lead}
+            {article.description}
           </p>
         </CardContent>
       </Card>

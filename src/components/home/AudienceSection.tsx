@@ -26,8 +26,8 @@ const audiences = [
 
 const AudienceSection = () => {
   return (
-    <section className="py-16 md:py-24">
-      <div className="container">
+    <section className="px-2 pt-24 md:pt-32 md:px-6 pb-8">
+      <div className="container mx-auto max-w-7xl">
         <div className="mx-auto max-w-2xl text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
             Для кого эта платформа

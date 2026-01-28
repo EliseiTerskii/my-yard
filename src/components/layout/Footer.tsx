@@ -4,7 +4,7 @@ import { Home, Mail, Phone } from "lucide-react";
 const Footer = () => {
   return (
     <footer className="border-t bg-secondary/50">
-      <div className="container py-12">
+      <div className="container py-12 mx-auto max-w-7xl">
         <div className="grid gap-8 md:grid-cols-3">
           {/* Logo & Description */}
           <div className="space-y-4">

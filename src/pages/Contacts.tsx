@@ -38,7 +38,7 @@ const Contacts = () => {
       <main className="flex-1">
         {/* Hero Section */}
         <section className="bg-muted/30 py-12 md:py-16">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 Контакты
@@ -52,7 +52,7 @@ const Contacts = () => {
 
         {/* Contacts Grid */}
         <section className="py-12 md:py-16">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto">
             <div className="max-w-3xl mx-auto">
               <div className="grid sm:grid-cols-2 gap-4">
                 {contactItems.map((item, index) => (

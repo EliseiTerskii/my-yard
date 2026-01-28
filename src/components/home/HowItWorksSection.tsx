@@ -32,7 +32,7 @@ const steps = [
 const HowItWorksSection = () => {
   return (
     <section className="py-16 md:py-24">
-      <div className="container">
+      <div className="container mx-auto max-w-7xl">
         <div className="mx-auto max-w-2xl text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
             Как это работает

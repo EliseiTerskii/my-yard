@@ -25,8 +25,8 @@ const values = [
 
 const ValueSection = () => {
   return (
-    <section className="bg-secondary/30 py-16 md:py-24">
-      <div className="container">
+    <section className="bg-secondary/30 px-2 pt-24 md:pt-32 md:px-6 pb-8">
+      <div className="container mx-auto max-w-7xl">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
           {/* Text Block */}
           <div className="space-y-6">
