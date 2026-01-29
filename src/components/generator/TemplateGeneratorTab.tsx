@@ -61,7 +61,7 @@ const TemplateGeneratorTab = ({ onGenerate, isGenerating }: TemplateGeneratorTab
     });
   };
 
-  const isFormValid = selectedTemplate && formData.houseAddress;
+  const isFormValid = selectedTemplate && formData.houseAddress && formData.meetingForm;
 
   return (
     <div className="space-y-8">
@@ -175,7 +175,7 @@ const TemplateGeneratorTab = ({ onGenerate, isGenerating }: TemplateGeneratorTab
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="meetingForm">Форма ОСС</Label>
+                <Label htmlFor="meetingForm">Форма ОСС *</Label>
                 <Select
                   value={formData.meetingForm}
                   onValueChange={(value) => handleInputChange("meetingForm", value)}
