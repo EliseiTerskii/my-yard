@@ -104,7 +104,7 @@ const DocumentGenerator = () => {
                     </div>
 
                     {/* Content */}
-                    <div className="container relative z-10 h-full">
+                    <div className="container mx-auto max-w-7xl relative z-10 h-full">
                         <div className="flex items-center min-h-[400px] md:min-h-[500px] py-12">
                             <div className="max-w-xl space-y-6 animate-fade-in">
                                 {/* Badge */}
@@ -150,7 +150,7 @@ const DocumentGenerator = () => {
 
                 {/* Main Working Area */}
                 <section className="py-12 md:py-16">
-                    <div className="container mx-auto px-4">
+                    <div className="container mx-auto max-w-7xl px-4">
                         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
                             {/* Left Column - Input */}
                             <div>

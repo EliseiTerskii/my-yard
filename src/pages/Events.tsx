@@ -35,7 +35,7 @@ const Events = () => {
                     </div>
 
                     {/* Content */}
-                    <div className="container relative z-10 h-full">
+                    <div className="container mx-auto max-w-7xl relative z-10 h-full">
                         <div className="flex items-center min-h-[400px] md:min-h-[500px] py-12">
                             <div className="max-w-xl space-y-6 animate-fade-in">
                                 {/* Badge */}
@@ -81,7 +81,7 @@ const Events = () => {
 
                 {/* Upcoming Events */}
                 <section className="py-12 md:py-16">
-                    <div className="container mx-auto px-4">
+                    <div className="container mx-auto max-w-7xl px-4">
                         <div className="flex items-center gap-3 mb-8">
                             <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10">
                                 <CalendarDays className="h-5 w-5 text-primary"/>
@@ -118,7 +118,7 @@ const Events = () => {
 
                 {/* Past Events */}
                 <section className="py-12 md:py-16 bg-muted/30">
-                    <div className="container mx-auto px-4">
+                    <div className="container max-w-7xl px-4">
                         <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8">
                             Прошедшие мероприятия
                         </h2>

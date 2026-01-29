@@ -56,7 +56,7 @@ const Lectorium = () => {
                     </div>
 
                     {/* Content */}
-                    <div className="container z-10 h-full">
+                    <div className="container mx-auto max-w-7xl z-10 h-full">
                         <div className="flex items-center min-h-[400px] md:min-h-[500px] py-12">
                             <div className="max-w-xl space-y-6 animate-fade-in">
                                 {/* Badge */}
