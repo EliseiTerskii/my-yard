@@ -28,8 +28,8 @@ const DocumentGenerator = () => {
                 })
 
             if (response.status < 400) {
-                setGeneratedDocument(response.data.aiResponse)
-                setDownloadUrl(response.data.downloadUrl)
+                setGeneratedDocument(response.data.document_text)
+                setDownloadUrl(response.data.document_path)
                 toast({
                     title: "Успешно!",
                     description: "Ваш документ создан",
@@ -57,8 +57,8 @@ const DocumentGenerator = () => {
                 })
 
             if (response.status < 400) {
-                setGeneratedDocument(response.data.aiResponse)
-                setDownloadUrl(response.data.downloadUrl)
+                setGeneratedDocument(response.data.document_text)
+                setDownloadUrl(response.data.document_path)
                 toast({
                     title: "Успешно!",
                     description: "Ваш документ создан",

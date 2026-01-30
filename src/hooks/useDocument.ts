@@ -24,8 +24,8 @@ export const aiModes = [
 export type GetDocumentTemplates = { id: string, title: string, description: string }[];
 
 export type DocumentResponse = {
-    aiResponse: string;
-    downloadUrl: string;
+    document_text: string;
+    document_path: string;
 }
 
 export const useTemplates = () => {
