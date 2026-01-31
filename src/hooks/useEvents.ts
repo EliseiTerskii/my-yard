@@ -38,7 +38,7 @@ export const useEvents = () => {
             const {data} = await api.get<GetEventsResponse, AxiosResponse<GetEventsResponse>, GetEventsRequest>(ApiService.EVENTS.GET_PAST, {
                 params: {
                     page: pageParam,
-                    limit: 4
+                    limit: 20
                 }
             });
             return data;
@@ -52,16 +52,5 @@ export const useEvents = () => {
             return lastPage.page + 1;
         },
         queryKey: [QueryKeysEnum.Events],
-    });
-};
-
-export const useUpcomingEvents = () => {
-    return useQuery({
-        refetchOnMount: true,
-        queryFn: async () => {
-            const {data} = await api.get<EventItem[], AxiosResponse<EventItem[]>>(ApiService.EVENTS.GET_UPCOMING);
-            return data;
-        },
-        queryKey: [QueryKeysEnum.UpEvents],
     });
 };

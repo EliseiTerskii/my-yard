@@ -14,9 +14,8 @@ export interface Lecture {
     tags: string[];
     description: string;
     previewImage: string;
-    materials?: { name: string; url: string, type: string }[];
+    materials?: { knowledge: string[]; articles: {title: string; link: string, tag: string, duration: string}[] };
     nextLecture?: { id: string, title: string, previewImage: string, description: string };
-    learnings: string[];
 }
 
 export type GetLecturesRequest = {

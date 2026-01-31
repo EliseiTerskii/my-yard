@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Home, Mail, Phone } from "lucide-react";
+import {Home, Mail, Send} from "lucide-react";
 
 const Footer = () => {
   return (
@@ -44,18 +44,26 @@ const Footer = () => {
             <h3 className="font-semibold text-foreground">Контакты</h3>
             <div className="flex flex-col gap-3">
               <a 
-                href="mailto:info@moydvor.ru" 
+                href="mailto:genezis.fond@BK.ru"
                 className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 <Mail className="h-4 w-4" />
-                info@moydvor.ru
+                genezis.fond@BK.ru
+              </a>
+              <a
+                  href="mailto:genesis.kostyaeva.uylua@gmail.com"
+                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                <Mail className="h-4 w-4" />
+                genesis.kostyaeva.uylua@gmail.com
               </a>
               <a 
-                href="tel:+78001234567" 
+                href="https://t.me/+79854415175"
+                target="_blank"
                 className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
               >
-                <Phone className="h-4 w-4" />
-                8 (800) 123-45-67
+                <Send className="h-4 w-4" />
+                +7 (985) 441-51-75
               </a>
             </div>
           </div>
@@ -64,14 +72,11 @@ const Footer = () => {
         {/* Bottom */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t pt-8 md:flex-row">
           <p className="text-sm text-muted-foreground">
-            © 2024 Мой Двор. Образовательный проект.
+            © 2026 Мой Двор. Образовательный проект.
           </p>
           <div className="flex gap-6">
-            <Link to="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+            <Link to="/policy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
               Политика конфиденциальности
-            </Link>
-            <Link to="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-              Условия использования
             </Link>
           </div>
         </div>

@@ -31,7 +31,7 @@ const Lectorium = () => {
         );
     };
 
-    const {data: lectures, isLoading} = useLectures({course: selectedCourse || undefined, tags: debouncedTags})
+    const {data: lectures, isLoading} = useLectures({course: selectedCourse || undefined, tags: selectedTags?.length > 0 ? debouncedTags : undefined})
 
     return (
         <div className="min-h-screen flex flex-col bg-background">

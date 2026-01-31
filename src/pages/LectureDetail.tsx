@@ -1,5 +1,5 @@
 import {useParams, Link} from "react-router-dom";
-import {ArrowLeft, Clock, FileText, CheckCircle2, ArrowRight} from "lucide-react";
+import {ArrowLeft, Clock, FileText, CheckCircle2, ArrowRight, BookOpen} from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import {Button} from "@/components/ui/button";
@@ -135,59 +135,49 @@ const LectureDetail = () => {
                             </div>
 
                             {/* What You'll Learn */}
-                            <Card className="border-primary/20 bg-primary/5">
+                            {lecture?.materials?.knowledge &&
+                              <Card className="border-primary/20 bg-primary/5">
                                 <CardHeader className="pb-3">
-                                    <CardTitle className="text-lg flex items-center gap-2">
-                                        <CheckCircle2 className="w-5 h-5 text-primary"/>
-                                        Что вы узнаете
-                                    </CardTitle>
+                                  <CardTitle className="text-lg flex items-center gap-2">
+                                    <CheckCircle2 className="w-5 h-5 text-primary"/>
+                                    Что вы узнаете
+                                  </CardTitle>
                                 </CardHeader>
                                 <CardContent>
-                                    <ul className="space-y-2">
-                                        {lecture.learnings.map((learning, index) => (
-                                            <li key={index} className="flex items-start gap-3">
-                                                <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"/>
-                                                <span className="text-foreground">{learning}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
+                                  <ul className="space-y-2">
+                                      {lecture?.materials?.knowledge?.map((learning, index) => (
+                                          <li key={index} className="flex items-start gap-3">
+                                              <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"/>
+                                              <span className="text-foreground">{learning}</span>
+                                          </li>
+                                      ))}
+                                  </ul>
                                 </CardContent>
-                            </Card>
+                              </Card>
+                            }
                         </div>
 
                         {/* Sidebar */}
                         <div className="space-y-6">
                             {/* Materials */}
-                            {lecture.materials && lecture.materials.length > 0 && (
+                            {lecture.materials?.articles && lecture.materials?.articles?.length > 0 && (
                                 <Card>
                                     <CardHeader className="pb-3">
                                         <CardTitle className="text-lg flex items-center gap-2">
-                                            <FileText className="w-5 h-5 text-primary"/>
-                                            Материалы
+                                            <BookOpen className="w-5 h-5 text-primary"/>
+                                            Статьи по теме
                                         </CardTitle>
                                     </CardHeader>
                                     <CardContent className="space-y-2">
-                                        {lecture.materials.map((material, index) => (
-                                            <button
-                                                key={index}
-                                                onClick={async () => {
-                                                    try {
-                                                        await downloadFile(material.url)
-                                                    } catch (error) {
-                                                        toast({
-                                                            title: "Ошибка",
-                                                            description: 'Не удалось скачать презентацию',
-                                                            variant: "destructive",
-                                                        });
-                                                    }
-                                                }
-                                                }
-                                                className="block p-3 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors"
-                                            >
-                        <span className="text-sm font-medium text-foreground">
-                          {material.name}
-                        </span>
-                                            </button>
+                                        {lecture.materials?.articles.map((material, index) => (
+                                            <Link to={material.link} className="block p-3 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors w-full">
+                                                <div className='flex flex-col gap-2'>
+                                                    <p className='font-bold'>
+                                                        {material.title}
+                                                    </p>
+                                                    <p>{material.tag} • {material.duration}</p>
+                                                </div>
+                                            </Link>
                                         ))}
                                     </CardContent>
                                 </Card>

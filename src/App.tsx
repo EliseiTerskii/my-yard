@@ -14,6 +14,7 @@ import ArticleDetail from "./pages/ArticleDetail";
 import Memo from "./pages/Memo";
 import Contacts from "./pages/Contacts";
 import NotFound from "./pages/NotFound";
+import Privacy from "@/pages/Privacy.tsx";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +36,7 @@ const App = () => (
           <Route path="/legal/:articleId" element={<ArticleDetail />} />
           <Route path="/memo" element={<Memo />} />
           <Route path="/contacts" element={<Contacts />} />
+          <Route path="/policy" element={<Privacy />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

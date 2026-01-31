@@ -9,6 +9,7 @@ import {ApiService} from "@/api/service.ts";
 import {Loader} from "@/components/ui/loader.tsx";
 import {EventItem} from "@/hooks/useEvents.ts";
 import dayjs from "dayjs";
+import {Markdown} from "@/components/ui/markdown.tsx";
 
 const EventDetail = () => {
     const {eventId} = useParams<{ eventId: string }>();
@@ -98,15 +99,10 @@ const EventDetail = () => {
                 </section>
 
                 {/* Content Section */}
-                <section className="py-10 md:py-12">
+                <section className="py-10">
                     <div className="container mx-auto max-w-7xl">
                         <div className="max-w-3xl">
-                            <h2 className="text-xl font-semibold text-foreground mb-4">
-                                Что было
-                            </h2>
-                            <p className="text-muted-foreground leading-relaxed">
-                                {event.shortDescription}
-                            </p>
+                            <Markdown content={event.content}/>
                         </div>
                     </div>
                 </section>

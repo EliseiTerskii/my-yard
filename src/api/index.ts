@@ -11,7 +11,7 @@ export enum QueryKeysEnum {
     UpEvents = 'upEvents'
 }
 
-const apiUrl = 'http://92.53.64.72:3000/v1';
+const apiUrl = 'https://api.мойдвор-платформа.рф/v1';
 
 export const api = axios.create({
     baseURL: apiUrl,

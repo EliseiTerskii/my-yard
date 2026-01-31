@@ -1,16 +1,16 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import {EventCard} from "@/components/events/EventCard";
-import {useEvents, useUpcomingEvents} from "@/hooks/useEvents.ts";
+import {useEvents} from "@/hooks/useEvents.ts";
 import {Loader} from "@/components/ui/loader.tsx";
 import eventsHero from "@/assets/events-hero.png";
 import {CalendarDays, MapPin, Users} from "lucide-react";
 
 const Events = () => {
-    const {data: upcomingEvents, isLoading: isUpcomingLoading} = useUpcomingEvents();
     const {data: eventsData, isLoading: isEventsLoading} = useEvents();
 
-    const pastEvents = eventsData?.pages?.flatMap(news => news.data);
+    const pastEvents = eventsData?.pages?.flatMap(news => news.data.filter(event => event.eventType === 'past'));
+    const upcomingEvents = eventsData?.pages?.flatMap(news => news.data.filter(event => event.eventType === 'upcoming'));
 
     return (
         <div className="min-h-screen flex flex-col bg-background">
@@ -91,14 +91,14 @@ const Events = () => {
                             </h2>
                         </div>
                         <div className="max-w-2xl">
-                            {!upcomingEvents?.length && !isUpcomingLoading ? (
+                            {!upcomingEvents?.length && !isEventsLoading ? (
                                 <div className="text-center py-12 bg-muted/30 rounded-xl border border-border/50">
                                     <CalendarDays className="h-12 w-12 text-muted-foreground/50 mx-auto mb-4"/>
                                     <p className="text-muted-foreground">
                                         Пока нет запланированных мероприятий
                                     </p>
                                 </div>
-                            ) : isUpcomingLoading ?
+                            ) : isEventsLoading ?
                                 <Loader/>
                                 :
                                 (

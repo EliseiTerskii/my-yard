@@ -4,11 +4,12 @@ import {Menu, X, Home} from "lucide-react";
 import {Button} from "@/components/ui/button";
 
 const navItems = [
-    {label: "Лекторий", href: "/lectorium"},
-    {label: "Мероприятия", href: "/events"},
-    {label: "Генератор документов", href: "/documents"},
+    {label: "Главная", href: "/"},
     {label: "Юридическая база", href: "/legal"},
+    {label: "Генератор документов", href: "/documents"},
+    {label: "Лекторий", href: "/lectorium"},
     {label: "Памятка", href: "/memo"},
+    {label: "Мероприятия", href: "/events"},
     {label: "Контакты", href: "/contacts"},
 ];
 
@@ -58,8 +59,8 @@ const Header = () => {
 
             {/* Mobile Navigation */}
             {isMenuOpen && (
-                <div className="border-t bg-background lg:hidden">
-                    <nav className="container flex flex-col py-4">
+                <div className="border-t bg-background bg-white lg:hidden">
+                    <nav className="container absolute bg-white flex flex-col py-4">
                         {navItems.map((item) => (
                             <Link
                                 key={item.href}
