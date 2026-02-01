@@ -23,7 +23,9 @@ const DocumentGenerator = () => {
         setIsGenerating(true);
         try {
             const response = await api.post<DocumentResponse>(ApiService.DOCUMENT.GENERATE_FROM_TEXT,
-                text, {
+                {
+                    text
+                }, {
                     timeout: 300000
                 })
 
