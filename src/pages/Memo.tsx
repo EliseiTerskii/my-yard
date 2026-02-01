@@ -60,7 +60,7 @@ const Memo = () => {
                                             Практическое руководство
                                         </p>
                                         <div className="mt-6 text-xs text-muted-foreground">
-                                            PDF • 24 страницы
+                                            PDF • 6 страниц
                                         </div>
                                     </div>
                                 </div>
