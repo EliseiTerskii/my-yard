@@ -45,7 +45,7 @@ const Lectorium = () => {
                         <img
                             src={lectoriumHero}
                             alt=""
-                            className="w-full h-full object-cover object-center"
+                            className="w-full h-full object-cover object-left md:object-center"
                             aria-hidden="true"
                         />
                         {/* Gradient overlay for text readability */}
