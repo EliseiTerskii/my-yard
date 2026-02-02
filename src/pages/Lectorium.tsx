@@ -39,7 +39,7 @@ const Lectorium = () => {
 
             <main className="flex-1">
                 {/* Hero Section */}
-                <section className="relative min-h-[400px] md:min-h-[500px] overflow-hidden">
+                <section className="relative min-h-[600px] md:min-h-[700px] overflow-hidden">
                     {/* Background Illustration */}
                     <div className="absolute inset-0">
                         <img

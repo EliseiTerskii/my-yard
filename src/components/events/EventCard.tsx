@@ -54,9 +54,9 @@ export const EventCard = ({upcomingEvent, event}: EventCardProps) => {
                 </div>
                 <CardContent className="p-4">
                     <p className="text-xs text-muted-foreground mb-2">{dayjs(event.publishedAt).format('DD.MM.YYYY')}</p>
-                    <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2">
+                    <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">
                         {event.title}
-                    </h3>
+                    </h4>
                     <p className="text-sm text-muted-foreground mt-2 line-clamp-2">
                         {event.summary}
                     </p>

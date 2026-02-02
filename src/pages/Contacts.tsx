@@ -2,13 +2,14 @@ import {Mail, Phone, MessageCircle, Send, Home} from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import {Card, CardContent} from "@/components/ui/card";
+import {useToast} from "@/hooks/use-toast.ts";
 
 const contactItems = [
     {
         icon: Home,
         label: "Юридический адрес",
         value: "119180, город Москва, ул. Большая Полянка, д. 51а/9, этаж/помещ. 8/I, ком./офис 1/взу",
-        href: "https://wa.me/74951234567",
+        href: "copy",
     },
     {
         icon: Send,
@@ -31,6 +32,8 @@ const contactItems = [
 ];
 
 const Contacts = () => {
+    const {toast} = useToast();
+
     return (
         <div className="min-h-screen flex flex-col bg-background">
             <Header/>
@@ -58,10 +61,25 @@ const Contacts = () => {
                                 {contactItems.map((item, index) => (
                                     <a
                                         key={index}
-                                        href={item.href}
+                                        href={item.href === 'copy' ? '#' : item.href}
                                         target={item.href.startsWith("http") ? "_blank" : undefined}
                                         rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
                                         className="block"
+                                        onClick={async () => {
+                                            if (item.href === 'copy') {try {
+                                                await navigator.clipboard.writeText(item.value);
+                                                toast({
+                                                    title: "Скопировано",
+                                                    description: "Адрес скопирован в буфер обмена",
+                                                });
+                                            } catch {
+                                                toast({
+                                                    title: "Ошибка",
+                                                    description: "Не удалось скопировать адрес",
+                                                    variant: "destructive",
+                                                });
+                                            }
+                                        }}}
                                     >
                                         <Card className="h-full hover:shadow-md transition-shadow cursor-pointer">
                                             <CardContent className="p-6">

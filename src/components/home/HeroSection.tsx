@@ -20,7 +20,7 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="container relative z-10 h-full mx-auto max-w-7xl">
-        <div className="flex items-center min-h-[600px] md:min-h-[700px] py-16">
+        <div className="flex items-center min-h-[400px] md:min-h-[500px] py-12">
           <div className="max-w-xl space-y-8 animate-fade-in">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
